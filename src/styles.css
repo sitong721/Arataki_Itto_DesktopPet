@@ -1,0 +1,198 @@
+:root {
+  --sprite-w: 230px;
+  --sprite-h: 340px;
+  --sprite-left: 34px;
+  --sprite-bottom: 14px;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: transparent;
+  user-select: none;
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  -webkit-app-region: no-drag;
+}
+
+#sprite {
+  position: absolute;
+  left: var(--sprite-left);
+  bottom: var(--sprite-bottom);
+  width: var(--sprite-w);
+  height: var(--sprite-h);
+  object-fit: contain;
+  object-position: center bottom;
+  filter: drop-shadow(0 7px 8px rgba(24, 16, 20, 0.18));
+  cursor: grab;
+  transform-origin: 50% 92%;
+  animation: none;
+  will-change: transform, filter;
+  -webkit-app-region: no-drag;
+}
+
+#sprite:active {
+  cursor: grabbing;
+}
+
+#settings,
+#close {
+  position: absolute;
+  top: 8px;
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(35, 25, 32, 0.66);
+  font: 16px/24px "Microsoft YaHei", system-ui, sans-serif;
+  opacity: 0.9;
+  transition: transform 120ms ease, background 120ms ease, opacity 120ms ease;
+  -webkit-app-region: no-drag;
+}
+
+#settings {
+  right: 44px;
+}
+
+#close {
+  right: 10px;
+  font-size: 18px;
+}
+
+#stage:not(:hover) #settings,
+#stage:not(:hover) #close {
+  opacity: 0.32;
+}
+
+#settings:hover,
+#close:hover {
+  background: rgba(154, 38, 35, 0.84);
+  transform: translateY(-1px);
+  opacity: 1;
+}
+
+#sprite.walk-right {
+  animation: walkRight 960ms ease-in-out infinite;
+}
+
+#sprite.walk-left {
+  animation: walkLeft 960ms ease-in-out infinite;
+}
+
+#sprite.wave {
+  animation: wave 900ms ease-in-out infinite;
+}
+
+#sprite.smile {
+  animation: smile 1100ms ease-in-out infinite;
+}
+
+#sprite.wink {
+  animation: wink 1150ms ease-in-out infinite;
+}
+
+#sprite.salute {
+  animation: salute 1000ms ease-in-out infinite;
+}
+
+#sprite.present {
+  animation: present 1200ms ease-in-out infinite;
+}
+
+#sprite.proud {
+  animation: proud 1300ms ease-in-out infinite;
+}
+
+#sprite.waiting {
+  animation: waiting 1300ms ease-in-out infinite;
+}
+
+#sprite.working {
+  animation: working 980ms ease-in-out infinite;
+}
+
+#sprite.review {
+  animation: review 1150ms ease-in-out infinite;
+}
+
+#sprite.failed {
+  animation: failed 1150ms ease-in-out infinite;
+  filter: drop-shadow(0 7px 8px rgba(24, 16, 20, 0.18)) saturate(0.88);
+}
+
+@keyframes walkRight {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(0.2deg); }
+  50% { transform: translateX(1.5px) translateY(-2px) rotate(-0.4deg); }
+}
+
+@keyframes walkLeft {
+  0%, 100% { transform: translateX(0) translateY(0) rotate(-0.2deg); }
+  50% { transform: translateX(-1.5px) translateY(-2px) rotate(0.4deg); }
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  35% { transform: rotate(-2.2deg) translateY(-2px); }
+  68% { transform: rotate(1.8deg) translateY(-3px); }
+}
+
+@keyframes smile {
+  0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 7px 8px rgba(24, 16, 20, 0.18)) brightness(1); }
+  48% { transform: translateY(-3px) scale(1.018, 0.992); filter: drop-shadow(0 10px 12px rgba(24, 16, 20, 0.22)) brightness(1.08); }
+}
+
+@keyframes wink {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  35% { transform: rotate(-1.6deg) translateY(-2px) scale(1.01, 0.998); }
+  68% { transform: rotate(0.8deg) translateY(0); }
+}
+
+@keyframes salute {
+  0%, 100% { transform: rotate(0deg) translateX(0) translateY(0); }
+  45% { transform: rotate(-3.1deg) translateX(-2px) translateY(-4px); }
+}
+
+@keyframes present {
+  0%, 100% { transform: rotate(0deg) translateX(0) translateY(0); }
+  50% { transform: rotate(2.4deg) translateX(3px) translateY(-2px) scale(1.012); }
+}
+
+@keyframes proud {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  42% { transform: translateY(-3px) rotate(-1deg) scale(1.01); }
+  70% { transform: translateY(-2px) rotate(1deg); }
+}
+
+@keyframes waiting {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  45% { transform: translateY(-1px) rotate(-0.8deg); }
+}
+
+@keyframes working {
+  0%, 100% { transform: translateY(0) scale(1); filter: drop-shadow(0 7px 8px rgba(24, 16, 20, 0.18)) brightness(1); }
+  50% { transform: translateY(-2px) scale(1.006); filter: drop-shadow(0 9px 10px rgba(24, 16, 20, 0.2)) brightness(1.05); }
+}
+
+@keyframes review {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(1.2deg) translateY(-1px); }
+}
+
+@keyframes failed {
+  0%, 100% { transform: translateY(2px) rotate(0deg); }
+  50% { transform: translateY(5px) rotate(-1.4deg); }
+}

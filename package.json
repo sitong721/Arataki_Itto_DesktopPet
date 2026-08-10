@@ -1,0 +1,13 @@
+{
+  "name": "itto-desktop-pet",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Transparent Electron desktop pet using a Codex-style Itto spritesheet.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "electron": "^31.7.7"
+  }
+}

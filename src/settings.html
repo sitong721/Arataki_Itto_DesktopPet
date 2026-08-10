@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Itto Settings</title>
+    <link rel="stylesheet" href="./settings.css" />
+  </head>
+  <body>
+    <section class="panel" aria-label="Itto settings">
+      <header>
+        <strong>Itto Settings</strong>
+        <button id="closeSettings" title="Hide">X</button>
+      </header>
+
+      <div class="group">
+        <div class="label">Size</div>
+        <div class="segmented" id="sizeButtons">
+          <button data-size="small">Small</button>
+          <button data-size="normal">Normal</button>
+          <button data-size="large">Large</button>
+        </div>
+      </div>
+
+      <div class="group">
+        <div class="label">Actions</div>
+        <div class="grid" id="actionButtons">
+          <button data-action="idle">Stand</button>
+          <button data-action="smile">Laugh</button>
+          <button data-action="wink">Wink</button>
+          <button data-action="salute">Pose</button>
+          <button data-action="present">Show</button>
+          <button data-action="proud">Proud</button>
+        </div>
+      </div>
+    </section>
+    <script src="./settings.js"></script>
+  </body>
+</html>
